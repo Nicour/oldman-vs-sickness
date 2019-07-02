@@ -11,12 +11,27 @@ function Game(canvas) {
 
 Game.prototype.startGame = function () {
 
-  this.player = new OldMan(this.canvas);
+  this.oldMan = new OldMan(this.canvas);
 
-  var loop = function loop() {
-      console.log('hey');
-      requestAnimationFrame(loop);
-    };
-    loop();
+  var loop = () => {
+    this.update();
+    this.clear();
+    this.draw();
+    requestAnimationFrame(loop);
   };
+
+  loop();
+};
+
+Game.prototype.update = function update() {
+    this.oldMan.move();
+};
+
+Game.prototype.clear = function clear() {
+  this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+};
+
+Game.prototype.draw = function draw() {
+  this.oldMan.draw();
+};
 

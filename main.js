@@ -33,7 +33,13 @@ function main() {
     var game = new Game(canvas);
     game.startGame();
 
-    var timeOut = setTimeout(createGameOverScreen, 2000)
+    document.addEventListener('keyup', function(event) {
+      if(event.key === 'ArrowUp') {
+        game.oldMan.setDirection(-1);
+      };
+    });
+
+    //var timeOut = setTimeout(createGameOverScreen, 2000)
   };
 
   function createGameOverScreen() {
