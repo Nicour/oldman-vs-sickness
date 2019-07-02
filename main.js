@@ -35,8 +35,10 @@ function main() {
 
     document.addEventListener('keyup', function(event) {
       if(event.key === 'ArrowUp') {
-        game.oldMan.setDirection(-1);
-      };
+        game.oldMan.setDirection(-2);
+      } else if(game.oldMan.y > game.oldMan.height * 2) {
+          game.oldMan.setDirection(2);
+        };
     });
 
     //var timeOut = setTimeout(createGameOverScreen, 2000)

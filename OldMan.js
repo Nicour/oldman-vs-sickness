@@ -24,4 +24,4 @@ OldMan.prototype.draw = function() {
 
 OldMan.prototype.setDirection = function(newDirection) {
   this.direction = newDirection;
-}
+};

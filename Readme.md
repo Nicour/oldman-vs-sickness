@@ -158,10 +158,10 @@ Game Over condition (Game.js)
 Links
 
 Trello
-The old man vs The sickness
+The old man vs The sickness (https://trello.com/b/M4esqTsZ/the-old-man-vs-the-sickness)
 
 Git
-URls for the project repo and deploy Link Repo Link Deploy
+https://github.com/Nicour/oldman-vs-sickness
 
 Slides
 URls for the project presentation (slides) Link Slides.com
