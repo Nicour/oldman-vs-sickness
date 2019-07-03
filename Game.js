@@ -18,7 +18,7 @@ Game.prototype.startGame = function () {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
       }
-  }, 500)
+  }, 300)
 
   var loop = () => {
     this.update();
@@ -57,9 +57,10 @@ Game.prototype.checkCollisions = function() {
 console.log(this.sickness);
 this.sickness.forEach((sickness, index) => {
     var rightLeft = this.oldMan.x + this.oldMan.width >= sickness.x;
+    var leftRight = this.oldMan.x <= sickness.x + sickness.width;
     var bottomTop = this.oldMan.y + this.oldMan.height >= sickness.y;
 
-    if(rightLeft && bottomTop) {
+    if(rightLeft && bottomTop && leftRight) {
       this.sickness.splice(index, 1);
       this.oldMan.lives --;
       if(this.oldMan.lives === 0) {

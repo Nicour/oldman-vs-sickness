@@ -5,7 +5,7 @@ function Sickness(canvas, randomY) {
   this.ctx = this.canvas.getContext('2d');
   this.x = this.canvas.width;
   this.y = 480;
-  this.velocity = 5;
+  this.velocity = 7;
   this.direction = -1;
   this.color = 'black';
   this.width = 20;
