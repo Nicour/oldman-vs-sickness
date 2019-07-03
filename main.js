@@ -34,7 +34,7 @@ function main() {
     game.startGame();
 
 
-    document.addEventListener('keyup', function(event) {
+    document.addEventListener('keydown', function(event) {
       if(event.key === 'ArrowUp') {
         game.oldMan.jump();
       } 

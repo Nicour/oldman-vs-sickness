@@ -3,17 +3,16 @@
 function OldMan(canvas) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
-  this.height = 20;
-  this.width = 20;
-  this.x = 20;
+  this.height = 30;
+  this.width = 30;
+  this.x = 40;
   this.y = this.canvas.height - this.height;
-  this.floorY = 480;
+  this.floorY = 470;
   this.lives = 1;
   this.color = 'red';
   this.timeJumping = 0;
-
-  this.jumpDuration = 10;
-  this.jumpLenght = this.height * 2;
+  this.jumpDuration = 17;
+  this.jumpLenght = this.height * 3;
 };
 
 OldMan.prototype.jump = function() {
