@@ -97,4 +97,5 @@ section.testimonials .button {
 
 canvas {
   border: 1px solid black;
+  object-position: center;
 }

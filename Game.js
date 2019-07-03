@@ -49,14 +49,15 @@ Game.prototype.draw = function draw() {
 };
 
 Game.prototype.checkCollisions = function() {
-  this.sickness.forEach((sickness, index) => {
-    var rightLeft = this.oldman.x + this.oldman.width >= sickness.x;
-    var bottomTop = this.oldman.y + this.oldman.height >= sickness.y;
+console.log(this.sickness);
+this.sickness.forEach((sickness, index) => {
+    var rightLeft = this.oldMan.x + this.oldMan.width >= sickness.x;
+    var bottomTop = this.oldMan.y + this.oldMan.height >= sickness.y;
 
     if(rightLeft && bottomTop) {
-      this.enemies.splice(index, 1);
-      this.oldman.lives --;
-      if(this.oldman.lives === 0) {
+      this.sickness.splice(index, 1);
+      this.oldMan.lives --;
+      if(this.oldMan.lives === 0) {
         this.isGameOver = true;
       }
     }
@@ -64,4 +65,5 @@ Game.prototype.checkCollisions = function() {
 
   return true || false;
 }
+
 
