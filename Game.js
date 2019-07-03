@@ -7,6 +7,7 @@ function Game(canvas) {
   this.isGameOver = false;
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
+  this.onGameOver = null;
 };
 
 Game.prototype.startGame = function () {
@@ -24,7 +25,11 @@ Game.prototype.startGame = function () {
     this.clear();
     this.draw();
     this.checkCollisions();
-    requestAnimationFrame(loop);
+    if(!this.isGameOver) {
+      requestAnimationFrame(loop);
+    } else {
+      this.onGameOver()
+    };
   };
 
   loop();
@@ -67,3 +72,6 @@ this.sickness.forEach((sickness, index) => {
 }
 
 
+Game.prototype.gameOverCallback = function(callback) {
+  this.onGameOver = callback;
+}
