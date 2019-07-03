@@ -3,16 +3,18 @@
 function OldMan(canvas) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
-  this.height = 30;
-  this.width = 30;
+  this.height = 60;
+  this.width = 60;
   this.x = 40;
   this.y = this.canvas.height - this.height;
-  this.floorY = 470;
+  this.floorY = 440;
   this.lives = 3;
   this.color = 'red';
   this.timeJumping = 0;
   this.jumpDuration = 17;
   this.jumpLenght = this.height * 3;
+  this.img = new Image();
+  this.img.src = './images/retirement.png'
 };
 
 OldMan.prototype.jump = function() {
@@ -34,8 +36,8 @@ OldMan.prototype.updatePosition = function() {
 };
 
 OldMan.prototype.draw = function() {
-  this.ctx.fillStyle = this.color;
-  this.ctx.fillRect(this.x, this.y, this.width, this.height)
+  var ctx = this.ctx;
+  ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
 };
 
 OldMan.prototype.setDirection = function(newDirection) {

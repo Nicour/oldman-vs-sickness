@@ -24,7 +24,7 @@ function main() {
 
   function createGameScreen() {
     var gameScreen = buildDom(`
-      <section>
+      <section class="background">
         <canvas width="1000" height="500"></canvas>
       </section>
     `);
