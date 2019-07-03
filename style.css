@@ -15,6 +15,11 @@ body {
 
 /* ---- typography ---- */
 
+@font-face {
+  font-family: 'digitek';
+  src: url('./font/DIGITEK.TTF');
+}
+
 body {
   color: #111;
   font-family: Helvetica, Arial, sans-serif;
@@ -97,6 +102,29 @@ section.testimonials .button {
 
 canvas {
   border: 1px solid black;
-  object-position: center;
+}
+
+.background {
   background-color: black;
 }
+
+main {
+  display: flex;
+  justify-content:space-around;
+  flex-direction: column;
+  background-color: black;
+  align-items: center;
+  color: white;
+}
+
+body {
+  font-family: digitek;
+  background-color: black;
+}
+
+.start-button {
+ justify-content: center;
+ align-self: flex-end;
+}
+
+

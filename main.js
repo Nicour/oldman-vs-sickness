@@ -11,10 +11,12 @@ function main() {
 
   function createSplashScreen() {
       var splashScreen = buildDom(`
-        <section>
+      <main>
+        <section class="main-screen">
           <h1>The old man vs The sickness</h1>
-          <button>Start</button>
+          <button class="start-button">Start</button>
         </section>
+      </main>
       `);
   
       var startButton = splashScreen.querySelector('button');
