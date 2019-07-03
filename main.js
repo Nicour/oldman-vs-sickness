@@ -33,15 +33,12 @@ function main() {
     var game = new Game(canvas);
     game.startGame();
 
+
     document.addEventListener('keyup', function(event) {
       if(event.key === 'ArrowUp') {
-        game.oldMan.setDirection(-2);
-      } else if(game.oldMan.y > game.oldMan.height * 2) {
-          game.oldMan.setDirection(2);
-        };
+        game.oldMan.jump();
+      } 
     });
-
-    //var timeOut = setTimeout(createGameOverScreen, 2000)
   };
 
   function createGameOverScreen() {

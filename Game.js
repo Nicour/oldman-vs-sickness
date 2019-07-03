@@ -24,7 +24,7 @@ Game.prototype.startGame = function () {
 };
 
 Game.prototype.update = function update() {
-    this.oldMan.move();
+    this.oldMan.updatePosition();
 };
 
 Game.prototype.clear = function clear() {

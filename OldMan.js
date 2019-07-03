@@ -7,14 +7,31 @@ function OldMan(canvas) {
   this.width = 20;
   this.x = 20;
   this.y = this.canvas.height - this.height;
+  this.floorY = 480;
   this.lives = 1;
-  this.velocity = 3;
-  this.direction = 0;
   this.color = 'red';
+  this.timeJumping = 0;
+
+  this.jumpDuration = 10;
+  this.jumpLenght = this.height * 2;
 };
 
-OldMan.prototype.move = function() {
-  this.y = this.y + this.direction * this.velocity;
+OldMan.prototype.jump = function() {
+  if (this.y === this.floorY) {
+    this.y = this.y - this.jumpLenght;
+    this.timeJumping = 0;
+  }
+};
+
+OldMan.prototype.updatePosition = function() {
+  if (this.y === this.floorY - this.jumpLenght) {
+    if (this.timeJumping < this.jumpDuration) {
+      this.timeJumping ++;
+    } else {
+      this.y = this.floorY;
+      this.timeJumping = 0;
+    }
+  }
 };
 
 OldMan.prototype.draw = function() {
