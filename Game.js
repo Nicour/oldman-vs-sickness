@@ -18,8 +18,11 @@ Game.prototype.startGame = function () {
     if(Math.random() > 0.8) {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
+      } else if (Math.random() > 0.93) {
+        var newMedicine = new Medicine(this.canvas);
+        this.medicine.push(newMedicine);
       }
-  }, 300)
+  }, 300);
 
   var loop = () => {
     this.update();
@@ -39,6 +42,9 @@ Game.prototype.startGame = function () {
 
 Game.prototype.update = function update() {
     this.oldMan.updatePosition();
+    this.medicine.forEach(function (medicine) {
+      medicine.move();
+  });
     this.sickness.forEach(function (sickness) {
       sickness.move();
   });
@@ -50,6 +56,9 @@ Game.prototype.clear = function clear() {
 
 Game.prototype.draw = function draw() {
   this.oldMan.draw();
+  this.medicine.forEach(function (medicine) {
+    medicine.draw();
+  });
   this.sickness.forEach(function (sickness) {
     sickness.draw();
   });
@@ -71,12 +80,22 @@ this.sickness.forEach((sickness, index) => {
     }
   });
 
+  this.medicine.forEach((medicine, index) => {
+    var rightLeft = this.oldMan.x + this.oldMan.width >= medicine.x;
+    var leftRight = this.oldMan.x <= medicine.x + medicine.width;
+    var bottomTop = this.oldMan.y + this.oldMan.height >= medicine.y;
+
+    if(rightLeft && bottomTop && leftRight) {
+      this.medicine.splice(index, 1);
+      this.oldMan.lives ++;
+      }
+  });
+
   return true || false;
 }
 
 Game.prototype.updateLives = function() {
   var span = document.querySelector('.number-of-lives');
-  console.log(span)
   span.innerHTML = this.oldMan.lives;
 }
 
