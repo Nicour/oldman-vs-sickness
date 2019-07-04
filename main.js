@@ -46,9 +46,9 @@ function main() {
 
   function createGameOverScreen() {
     var gameOverScreen = buildDom(`
-      <section>
+      <section class="main-screen">
         <h1>The old man dies!!</h1>
-        <button>Restart</button>
+        <button class="start-button">Restart</button>
       </section>
     `);
 

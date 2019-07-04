@@ -119,12 +119,21 @@ main {
 
 body {
   font-family: digitek;
+  font-size: 2em;
   background-color: black;
 }
 
-.start-button {
- justify-content: center;
- align-self: flex-end;
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.start-button {
+  background-color:black;
+  color: white;
+  border: black;
+  font-family: digitek;
+  font-size: 1em;
+}
 

@@ -11,7 +11,7 @@ function Sickness(canvas, randomY) {
   this.width = 30;
   this.height = 30;
   this.img = new Image();
-  this.img.src = './images/graveyard.png'
+  this.img.src = './images/tomb.png'
 }
 
 Sickness.prototype.move = function() {
