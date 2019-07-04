@@ -18,7 +18,7 @@ Game.prototype.startGame = function () {
     if(Math.random() > 0.85) {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
-      } else if (Math.random() > 0.95) {
+      } else if (Math.random() > 0.9) {
         var newMedicine = new Medicine(this.canvas);
         this.medicine.push(newMedicine);
       }
@@ -42,12 +42,20 @@ Game.prototype.startGame = function () {
 
 Game.prototype.update = function update() {
     this.oldMan.updatePosition();
-    this.medicine.forEach(function (medicine) {
-      medicine.move();
-  });
+    if (this.oldMan.lives < 10) {
+      this.medicine.forEach(function (medicine) {
+        medicine.move();
+  });}
+    if(this.oldMan.lives <= 3) {
     this.sickness.forEach(function (sickness) {
       sickness.move();
-  });
+  });} else if(this.oldMan.lives > 3 && this.oldMan.lives < 9){
+    this.sickness.forEach(function (sickness) {
+      sickness.moveFaster();
+    });} else {
+      this.sickness.forEach(function (sickness) {
+        sickness.moveFastest();
+      });}
 };
 
 Game.prototype.clear = function clear() {

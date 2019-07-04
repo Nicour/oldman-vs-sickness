@@ -15,7 +15,15 @@ function Sickness(canvas, randomY) {
 }
 
 Sickness.prototype.move = function() {
-  this.x = this.x + this.direction * this.velocity;
+  this.x = this.x + this.direction * this.velocity * 1.2;
+};
+
+Sickness.prototype.moveFaster = function() {
+  this.x = this.x + this.direction * this.velocity * 2;
+};
+
+Sickness.prototype.moveFastest = function() {
+  this.x = this.x + this.direction * this.velocity * 2.5;
 };
 
 Sickness.prototype.draw = function() {
