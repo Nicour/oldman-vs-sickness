@@ -121,6 +121,9 @@ body {
   font-family: digitek;
   font-size: 2em;
   background-color: black;
+  color: white;
+  line-height: 10vw;
+  text-shadow: 0 0 5vw white;
 }
 
 .main-screen {
@@ -131,9 +134,14 @@ body {
 
 .start-button {
   background-color:black;
-  color: white;
-  border: black;
+  border: none;
   font-family: digitek;
-  font-size: 1em;
+  font-size: 1.2em;
+  color: white;
+  line-height: 10vw;
+  text-shadow: 0 0 5vw white;
 }
 
+.lives {
+  padding: 15px;
+}

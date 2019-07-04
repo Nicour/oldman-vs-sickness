@@ -25,6 +25,7 @@ Game.prototype.startGame = function () {
     this.update();
     this.clear();
     this.draw();
+    this.updateLives();
     this.checkCollisions();
     if(!this.isGameOver) {
       requestAnimationFrame(loop);
@@ -55,7 +56,6 @@ Game.prototype.draw = function draw() {
 };
 
 Game.prototype.checkCollisions = function() {
-console.log(this.sickness);
 this.sickness.forEach((sickness, index) => {
     var rightLeft = this.oldMan.x + this.oldMan.width >= sickness.x;
     var leftRight = this.oldMan.x <= sickness.x + sickness.width;
@@ -74,6 +74,11 @@ this.sickness.forEach((sickness, index) => {
   return true || false;
 }
 
+Game.prototype.updateLives = function() {
+  var span = document.querySelector('.number-of-lives');
+  console.log(span)
+  span.innerHTML = this.oldMan.lives;
+}
 
 Game.prototype.gameOverCallback = function(callback) {
   this.onGameOver = callback;
