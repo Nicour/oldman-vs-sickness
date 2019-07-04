@@ -8,10 +8,11 @@ function Game(canvas) {
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
   this.onGameOver = null;
+  this.gameSong = new Audio('./Music/RVDE -  90s Hammer TWB008.mp3');
 };
 
 Game.prototype.startGame = function () {
-
+  this.gameSong.play()
   this.oldMan = new OldMan(this.canvas);
   setInterval(() => {
     if(Math.random() > 0.8) {
@@ -65,6 +66,7 @@ this.sickness.forEach((sickness, index) => {
       this.oldMan.lives --;
       if(this.oldMan.lives === 0) {
         this.isGameOver = true;
+        this.gameSong.pause();
       }
     }
   });
