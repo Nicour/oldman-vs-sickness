@@ -42,10 +42,9 @@ Game.prototype.startGame = function () {
 
 Game.prototype.update = function update() {
     this.oldMan.updatePosition();
-    if (this.oldMan.lives < 10) {
       this.medicine.forEach(function (medicine) {
         medicine.move();
-  });}
+  });
     if(this.oldMan.lives < 5) {
     this.sickness.forEach(function (sickness) {
       sickness.move();
