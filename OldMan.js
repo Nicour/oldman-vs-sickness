@@ -11,7 +11,7 @@ function OldMan(canvas) {
   this.lives = 3;
   this.color = 'red';
   this.timeJumping = 0;
-  this.jumpDuration = 17;
+  this.jumpDuration = 15;
   this.jumpLenght = this.height * 3;
   this.img = new Image();
   this.img.src = './images/retirement.png'

@@ -102,6 +102,8 @@ section.testimonials .button {
 
 canvas {
   border: 1px solid black;
+  background-image: url('./images/skull2.jpg');
+  background-position: 70% 90%;
 }
 
 .background {

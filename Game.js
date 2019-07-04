@@ -15,14 +15,14 @@ Game.prototype.startGame = function () {
   this.gameSong.play()
   this.oldMan = new OldMan(this.canvas);
   setInterval(() => {
-    if(Math.random() > 0.8) {
+    if(Math.random() > 0.85) {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
-      } else if (Math.random() > 0.93) {
+      } else if (Math.random() > 0.95) {
         var newMedicine = new Medicine(this.canvas);
         this.medicine.push(newMedicine);
       }
-  }, 300);
+  }, 330);
 
   var loop = () => {
     this.update();
