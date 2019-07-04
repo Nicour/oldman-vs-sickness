@@ -46,10 +46,10 @@ Game.prototype.update = function update() {
       this.medicine.forEach(function (medicine) {
         medicine.move();
   });}
-    if(this.oldMan.lives <= 3) {
+    if(this.oldMan.lives < 5) {
     this.sickness.forEach(function (sickness) {
       sickness.move();
-  });} else if(this.oldMan.lives > 3 && this.oldMan.lives < 9){
+  });} else if(this.oldMan.lives >= 5 && this.oldMan.lives < 9){
     this.sickness.forEach(function (sickness) {
       sickness.moveFaster();
     });} else {
