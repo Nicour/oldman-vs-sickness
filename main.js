@@ -27,7 +27,7 @@ function main() {
   function createGameScreen() {
     var gameScreen = buildDom(`
       <section class="background">
-        <div class="lives"><span class="number-of-lives"></span> hours of life remaining!</div>
+        <div class="lives"><span class="number-of-lives"></span> hours of life !</div>
         <canvas width="1000" height="500"></canvas>
       </section>
     `);
@@ -57,9 +57,9 @@ function main() {
     buttonRestart.addEventListener('click',createSplashScreen);
 
   };
-
-createSplashScreen();
-
+  
+  createSplashScreen();
+  
 };
 
 window.addEventListener('load', main);
