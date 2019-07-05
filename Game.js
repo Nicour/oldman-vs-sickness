@@ -18,11 +18,11 @@ Game.prototype.startGame = function () {
     if(Math.random() > 0.75) {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
-      } else if (Math.random() > 0.9) {
+      } else if (Math.random() > 0.95) {
         var newMedicine = new Medicine(this.canvas);
         this.medicine.push(newMedicine);
       }
-  }, 330);
+  }, 300);
 
   var loop = () => {
     this.update();
