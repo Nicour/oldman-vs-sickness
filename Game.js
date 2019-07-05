@@ -15,7 +15,7 @@ Game.prototype.startGame = function () {
   this.gameSong.play()
   this.oldMan = new OldMan(this.canvas);
   setInterval(() => {
-    if(Math.random() > 0.85) {
+    if(Math.random() > 0.75) {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
       } else if (Math.random() > 0.9) {
@@ -79,8 +79,8 @@ this.sickness.forEach((sickness, index) => {
 
     if(rightLeft && bottomTop && leftRight) {
       this.sickness.splice(index, 1);
-      this.oldMan.lives --;
-      if(this.oldMan.lives === 0) {
+      this.oldMan.lives = this.oldMan.lives - 2;
+      if(this.oldMan.lives <= 0) {
         this.isGameOver = true;
         this.gameSong.pause();
       }
@@ -94,7 +94,7 @@ this.sickness.forEach((sickness, index) => {
 
     if(rightLeft && bottomTop && leftRight) {
       this.medicine.splice(index, 1);
-      this.oldMan.lives ++;
+      this.oldMan.lives = this.oldMan.lives + 0.5;
       }
   });
 

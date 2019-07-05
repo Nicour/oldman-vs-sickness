@@ -27,7 +27,7 @@ function main() {
   function createGameScreen() {
     var gameScreen = buildDom(`
       <section class="background">
-        <div class="lives">Lives:<span class="number-of-lives"></span></div>
+        <div class="lives"><span class="number-of-lives"></span> hours of life remaining!</div>
         <canvas width="1000" height="500"></canvas>
       </section>
     `);
