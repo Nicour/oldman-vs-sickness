@@ -8,7 +8,7 @@ function OldMan(canvas) {
   this.x = 60;
   this.y = this.canvas.height - this.height;
   this.floorY = 440;
-  this.lives = 3;
+  this.lives = 5;
   this.color = 'red';
   this.timeJumping = 0;
   this.jumpDuration = 15;
