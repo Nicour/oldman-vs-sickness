@@ -15,7 +15,7 @@ Game.prototype.startGame = function () {
   this.gameSong.play()
   this.oldMan = new OldMan(this.canvas);
   setInterval(() => {
-    if(Math.random() > 0.8) {
+    if(Math.random() > 0.75) {
       var newSickness = new Sickness(this.canvas);
       this.sickness.push(newSickness);  
       } else if (Math.random() > 0.92) {
@@ -45,10 +45,10 @@ Game.prototype.update = function update() {
       this.medicine.forEach(function (medicine) {
         medicine.move();
   });
-    if(this.oldMan.lives < 7) {
+    if(this.oldMan.lives < 13) {
     this.sickness.forEach(function (sickness) {
       sickness.move();
-  });} else if(this.oldMan.lives >= 7 && this.oldMan.lives < 9){
+  });} else if(this.oldMan.lives >= 13 && this.oldMan.lives < 15){
     this.sickness.forEach(function (sickness) {
       sickness.moveFaster();
     });} else {
@@ -79,7 +79,7 @@ this.sickness.forEach((sickness, index) => {
 
     if(rightLeft && bottomTop && leftRight) {
       this.sickness.splice(index, 1);
-      this.oldMan.lives = this.oldMan.lives - 1.5;
+      this.oldMan.lives = this.oldMan.lives - 3;
       if(this.oldMan.lives <= 0) {
         this.isGameOver = true;
         this.gameSong.pause();
@@ -94,7 +94,7 @@ this.sickness.forEach((sickness, index) => {
 
     if(rightLeft && bottomTop && leftRight) {
       this.medicine.splice(index, 1);
-      this.oldMan.lives = this.oldMan.lives + 0.5;
+      this.oldMan.lives = this.oldMan.lives + 1;
       }
   });
 
