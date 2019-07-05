@@ -125,7 +125,7 @@ body {
   background-color: black;
   color: white;
   line-height: 10vw;
-  text-shadow: 0 0 5vw white;
+  text-shadow: 0 0 7vw white;
 }
 
 .main-screen {
@@ -141,7 +141,7 @@ body {
   font-size: 1.2em;
   color: white;
   line-height: 10vw;
-  text-shadow: 0 0 5vw white;
+  text-shadow: 0 0 7vw white;
 }
 
 .lives {
