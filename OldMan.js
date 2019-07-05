@@ -5,7 +5,7 @@ function OldMan(canvas) {
   this.ctx = canvas.getContext('2d');
   this.height = 60;
   this.width = 60;
-  this.x = 40;
+  this.x = 60;
   this.y = this.canvas.height - this.height;
   this.floorY = 440;
   this.lives = 3;
